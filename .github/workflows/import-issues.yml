@@ -3,6 +3,7 @@ on:
     schedule:
         # Run every 5 minutes
         - cron: "* * * * *"
+    workflow_dispatch:
 jobs:
     build:
         name: Import Issues
