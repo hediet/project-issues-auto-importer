@@ -1,0 +1,27 @@
+name: Import Issues
+on:
+    schedule:
+        # Run every 5 minutes
+        - cron: "* * * * *"
+jobs:
+    build:
+        name: Import Issues
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Install Node.js
+              uses: actions/setup-node@v1
+              with:
+                  node-version: "14"
+            - run: yarn install --immutable
+            - run: yarn build
+            - run: yarn run
+              env:
+                  GITHUB_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
+                  GIST_ID: ${{ secrets.GIST_ID }}
+                  PROJECT_ORG: ${{ secrets.PROJECT_ORG }}
+                  PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+                  ISSUES_ASSIGNEE: ${{ secrets.ISSUES_ASSIGNEE }}
+                  ISSUES_ORG: ${{ secrets.ISSUES_ORG }}
+                  ISSUES_PROJECT: ${{ secrets.ISSUES_PROJECT }}

@@ -1,0 +1,16 @@
+{
+	"name": "update-github-project",
+	"description": "description",
+	"authors": "author",
+	"version": "1.0.0",
+	"main": "pathToMain",
+	"dependencies": {
+		"@octokit/core": "^4.1.0",
+		"@types/node": "^18.11.7"
+	},
+	"scripts": {
+		"dev": "tsc --watch",
+		"build": "tsc",
+		"run": "node out/index"
+	}
+}
