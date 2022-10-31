@@ -17,7 +17,7 @@ jobs:
                   node-version: "14"
             - run: yarn install --immutable
             - run: yarn build
-            - run: yarn run
+            - run: yarn run importIssues
               env:
                   GITHUB_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
                   GIST_ID: ${{ secrets.GIST_ID }}

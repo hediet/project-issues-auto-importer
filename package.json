@@ -11,6 +11,6 @@
 	"scripts": {
 		"dev": "tsc --watch",
 		"build": "tsc",
-		"run": "node out/index"
+		"importIssues": "node out/index"
 	}
 }
